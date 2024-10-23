@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NodeJS Course 2024</title>
+    <link
+      rel="shortcut icon"
+      href="https://i.ibb.co/PTYrggs/favicon-32x32.png" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <main class="page">
+        <section class="home">
+          <h1 class="home__title">
+            Детальна інформація про контакт <%=contact.userName%>
+          </h1>
+          <div class="home__contact-detail">
+            <div class="home__contact-detail-row">
+              <span>ім'я</span><span><%=contact.userName%></span>
+            </div>
+            <div class="home__contact-detail-row">
+              <span>Номер</span><span><%=contact.userNumber%></span>
+            </div>
+            <div class="home__contact-detail-row">
+              <span>Місто</span><span><%=contact.userLocation%></span>
+            </div>
+            <div class="home__contacts-item-buttons">
+              <a
+                href="/contacts/edit/<%=contact.id%>"
+                class="home__contacts-item-edit"
+                >Редагувати</a
+              >
+              <button
+                type="button"
+                onclick="deleteContact(<%= contact.id %>)"
+                class="home__contacts-item-delete">
+                Видалити
+              </button>
+            </div>
+            <a href="/contacts" class="home__contacts-item-back">Назад</a>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">Created with love by Ruslan Musienko</footer>
+    </div>
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>
